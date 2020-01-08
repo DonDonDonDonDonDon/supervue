@@ -1,0 +1,17 @@
+{
+  "name": "supervue",
+  "version": "1.0.3",
+  "description": "supervue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "supervue"
+  ],
+  "author": "don",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
