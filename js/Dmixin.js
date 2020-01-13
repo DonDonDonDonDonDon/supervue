@@ -1,4 +1,6 @@
-const _ = require('lodash')
+if(require('lodash')){
+    const _ = require('lodash')
+}
 
 let dmixin = {
     hello: "word",
