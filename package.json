@@ -1,6 +1,6 @@
 {
   "name": "supervue",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "supervue",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,10 @@
   "keywords": [
     "supervue"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:DonDonDonDonDonDon/supervue.git"
+  },
   "author": "don",
   "license": "ISC",
   "dependencies": {
