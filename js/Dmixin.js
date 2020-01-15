@@ -1,46 +1,49 @@
-if(require('lodash')){
-    const _ = require('lodash')
-}
 
 let dmixin = {
-    hello: "word",
+    superRef: null,
     data() {
         return {
             demo: "demo",
         }
     },
+    /*props conflicts with ant vue,so use this.$el replace it.*/
+    /*
     props: {
         superRef: {
             type: String,
-
         },
-    },
+    },*/
     computed: {},
     methods: {
         doMethod(superRef, method, data) {
-            if (!_.isNil(this.superRef)) {
+            if (this.superRef!=null) {
                 const event = superRef + "." + method;
                 this.$listen.$emit(event, data);
             }
         }
     },
     destroyed() {
-        if (!_.isNil(this.superRef)) {
+        if (this.superRef!=null) {
             for (let key in this.$options.methods) {
                 const m = key;
-                const allMethod = this.$options.hello + "." + m
+                const allMethod = this.superRef + "." + m
                 this.$listen.$off(allMethod);
                 // console.log("destroy"+allMethod )
             }
         }
     },
     mounted() {
-        this.$options.hello = this.superRef;
+        /*props conflicts with ant vue,so use this.$el replace it.*/
+        try {
+            this.superRef =this.$el.getAttribute("superRef");
+        }catch (e) {
+
+        }
         // console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-        if (!_.isNil(this.superRef)) {
+        if (this.superRef!=null) {
             for (let key in this.$options.methods) {
                 const m = key;
-                const allMethod = this.$options.hello + "." + m
+                const allMethod = this.superRef + "." + m
                 // console.log("create listen"+allMethod)
                 this.$listen.$off(allMethod);
                 this.$listen.$on(allMethod, this.$options.methods[key])

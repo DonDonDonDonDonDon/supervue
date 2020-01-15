@@ -1,6 +1,6 @@
 {
   "name": "supervue",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "supervue",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,5 @@
   },
   "author": "don",
   "license": "ISC",
-  "dependencies": {
-    "lodash": "^4.17.15"
-  }
+  "dependencies": {}
 }
