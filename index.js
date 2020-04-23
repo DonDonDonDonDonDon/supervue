@@ -16,7 +16,6 @@ const superVue = {
         superVue.call=function(call){
             superVue.callMethod(call.superRef,call.method,call.data)
         }
-        console.log("$$$$$$$$$$$$$$$################@@@@@@@@@@@@@@@@@@@@@@")
         Vue.prototype.$superVue =superVue
 
         return  superVue;
