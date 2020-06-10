@@ -36,7 +36,9 @@ let dmixin = {
         /*props conflicts with ant vue,so use this.$el replace it.*/
         try {
             this.superRef =this.$el.getAttribute("superRef");
-        }catch (e) {
+            if(this.superRef==null){
+                this.superRef = this.$el.getAttribute("super-ref");
+            }        }catch (e) {
 
         }
         // console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
