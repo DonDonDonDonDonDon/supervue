@@ -18,7 +18,7 @@ let dmixin = {
         doMethod(superRef, method, data) {
             if (this.superRef!=null) {
                 const event = superRef + "." + method;
-                this.$listen.$emit(event, data).bind(this);
+                this.$listen.$emit(event, data);
             }
         }
     },
@@ -36,9 +36,7 @@ let dmixin = {
         /*props conflicts with ant vue,so use this.$el replace it.*/
         try {
             this.superRef =this.$el.getAttribute("superRef");
-            if(this.superRef==null){
-                this.superRef = this.$el.getAttribute("super-ref");
-            }        }catch (e) {
+        }catch (e) {
 
         }
         // console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
@@ -48,7 +46,7 @@ let dmixin = {
                 const allMethod = this.superRef + "." + m
                 // console.log("create listen"+allMethod)
                 this.$listen.$off(allMethod);
-                this.$listen.$on(allMethod, this.$options.methods[key])
+                this.$listen.$on(allMethod, this.$options.methods[key].bind(this))
             }
         }
     }
