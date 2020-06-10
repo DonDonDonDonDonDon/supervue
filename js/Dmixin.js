@@ -39,12 +39,10 @@ let dmixin = {
         }catch (e) {
 
         }
-        // console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         if (this.superRef!=null) {
             for (let key in this.$options.methods) {
                 const m = key;
                 const allMethod = this.superRef + "." + m
-                // console.log("create listen"+allMethod)
                 this.$listen.$off(allMethod);
                 this.$listen.$on(allMethod, this.$options.methods[key].bind(this))
             }
