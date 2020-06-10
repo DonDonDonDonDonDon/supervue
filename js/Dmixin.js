@@ -18,7 +18,7 @@ let dmixin = {
         doMethod(superRef, method, data) {
             if (this.superRef!=null) {
                 const event = superRef + "." + method;
-                this.$listen.$emit(event, data);
+                this.$listen.$emit(event, data).bind(this);
             }
         }
     },
