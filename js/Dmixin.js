@@ -36,6 +36,10 @@ let dmixin = {
         /*props conflicts with ant vue,so use this.$el replace it.*/
         try {
             this.superRef =this.$el.getAttribute("superRef");
+            if(!this.superRef){
+                this.superRef =this.$el.getAttribute("super-ref");
+
+            }
         }catch (e) {
 
         }
@@ -43,6 +47,8 @@ let dmixin = {
             for (let key in this.$options.methods) {
                 const m = key;
                 const allMethod = this.superRef + "." + m
+
+                /*这里要修改，以适应循环的操作，不然只会留下最后一个*/
                 this.$listen.$off(allMethod);
                 this.$listen.$on(allMethod, this.$options.methods[key].bind(this))
             }
