@@ -1,4 +1,7 @@
+/*
 import {dmixin}  from './js/Dmixin'
+*/
+var  dmixin =  require('./js/Dmixin')
 const superVue = {
     init : function(Vue){
         Vue.prototype.$listen = new Vue()
@@ -27,4 +30,9 @@ superVue.install = function (Vue) {
     superVue.init(Vue)
 }
 
+/*
 export {superVue};
+*/
+
+module.exports =superVue
+

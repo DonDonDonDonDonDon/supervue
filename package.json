@@ -1,6 +1,6 @@
 {
   "name": "supervue",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "description": "supervue",
   "main": "index.js",
   "scripts": {

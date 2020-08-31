@@ -55,5 +55,6 @@ let dmixin = {
         }
     }
 }
-export {dmixin};
+/*export {dmixin};*/
 
+module.exports =dmixin
